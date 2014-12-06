@@ -1,0 +1,41 @@
+<style>
+#tudo {
+	width: 1024px;
+	height: 768px;
+}
+#tudo1 {
+	position:relative;
+	width: 512px;
+	height: 384px;
+	float: left;
+}
+#tudo2 {
+	position: relative;
+	width: 512px;
+	height: 384px;
+	float: left;
+}
+</style>
+
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+</head>
+<body>
+<div id="tudo">
+	<div id="tudo1">
+		<img width="327" height="184" src="/images/yearbooks-generic.jpg"/>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra magna quis neque pretium aliquam. In vitae lacus ac erat dignissim pretium sed et lorem. Proin ullamcorper tortor quam, vel venenatis metus interdum vitae. Suspendisse vehicula sagittis urna ac tempor. Aliquam eu eros sodales, dignissim mi sed, auctor urna. Aenean ut neque mattis, bibendum tortor vitae, egestas libero. Duis consequat augue ut ante mollis, ut blandit mauris ultricies. Fusce pulvinar, turpis dictum porttitor tempor, sem arcu congue nunc, vitae posuere dolor mi auctor odio. Nulla erat augue, hendrerit sit amet posuere egestas, posuere consectetur augue. Proin accumsan accumsan malesuada. Quisque pharetra ullamcorper ultrices. Vestibulum fermentum efficitur nisi, nec mollis nulla condimentum eget. Donec eu mattis sapien, sed molestie ligula. Aenean suscipit mattis finibus. Proin eu pretium odio, id tincidunt leo.
+
+</p>
+	</div>
+    <div id="tudo2">
+    	<h1>Lista de Alunos</h1>
+
+		<% @usuarios.each do |usuario| %>
+			<h3><%= usuario.nomeCompleto %></h3>
+		<% end %>
+    </div>
+
+</div>
