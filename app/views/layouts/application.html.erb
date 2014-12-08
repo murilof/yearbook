@@ -15,14 +15,34 @@
     <ul class="nav">
       <li class="active"><a href="/">Home</a></li>
       <li class="divider-vertical"><a href="/usuarios/new">Cadastro</a></li>
-      <li class="divider-vertical"><a href="#">Login</a></li>
     </ul>
+  </div>
+</div>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <p class="navbar-text pull-right">
+        <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>.
+          <%= link_to 'Edite seu perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <% else %>
+          <%= link_to "Cadastre-se", new_user_registration_path, :class => 'navbar-link'  %> |
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+        <% end %>
+      </p>
+    </div>
   </div>
 </div>
 
 <div class="container">
 	<div class="row">
-		<div class="span9"><%= yield %></div>
+		<div class="span9">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
 	</div>
 </div>
 
